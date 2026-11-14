@@ -15,6 +15,7 @@ disabled_rules:
   - identifier_name        # short names like x, y, h, col are clearer in geometry and card code
   - nesting
   - large_tuple
+  - implicit_optional_initialization # explicit "= nil" is intentional in @Observable classes
 
 opt_in_rules:
   - empty_count

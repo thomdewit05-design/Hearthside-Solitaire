@@ -21,7 +21,8 @@ struct StatsView: View {
                     tile("stats.winrate", Text(stats.winRate, format: .percent.precision(.fractionLength(0))))
                     tile("stats.streak", Text(stats.currentWinStreak, format: .number))
                     tile("stats.longest", Text(stats.longestWinStreak, format: .number))
-                    tile("stats.besttime", stats.bestTime.map { Text(Duration.seconds($0), format: .time(pattern: .minuteSecond)) } ?? Text("–"))
+                    tile("stats.besttime", stats.bestTime.map { Text(Duration.seconds($0), format: .time(pattern: .minuteSecond)) }
+                         ?? Text("–"))
                     tile("stats.fewest", stats.fewestMoves.map { Text($0, format: .number) } ?? Text("–"))
                     tile("stats.bestscore", stats.bestScore.map { Text($0, format: .number) } ?? Text("–"))
                 }

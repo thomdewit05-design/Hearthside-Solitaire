@@ -42,7 +42,7 @@ final class CardTextureFactory {
     func slot(size: CGSize, symbol: String?) -> SKTexture {
         let key = "s\(symbol ?? "-")-\(Int(size.width))"
         if let cached = cache[key] { return cached }
-        let image = render(size: size) { ctx, rect in
+        let image = render(size: size) { _, rect in
             let path = UIBezierPath(roundedRect: rect.insetBy(dx: 1.5, dy: 1.5), cornerRadius: rect.width * 0.09)
             UIColor.black.withAlphaComponent(0.18).setFill()
             path.fill()

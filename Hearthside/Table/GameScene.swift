@@ -17,7 +17,8 @@ final class CardNode: SKSpriteNode {
         super.init(texture: back, color: .clear, size: size)
         name = "card"
         // Soft shadow under every card.
-        let shadow = SKSpriteNode(color: UIColor.black.withAlphaComponent(0.22), size: CGSize(width: size.width - 2, height: size.height - 2))
+        let shadow = SKSpriteNode(color: UIColor.black.withAlphaComponent(0.22),
+                                  size: CGSize(width: size.width - 2, height: size.height - 2))
         shadow.position = CGPoint(x: 1.5, y: -2)
         shadow.zPosition = -0.5
         shadow.name = "shadow"

@@ -61,7 +61,9 @@ struct SettingsView: View {
 
 extension Bundle {
     var shortVersion: String {
-        (infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0") + " (" + (infoDictionary?["CFBundleVersion"] as? String ?? "1") + ")"
+        let version = infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+        let build = infoDictionary?["CFBundleVersion"] as? String ?? "1"
+        return "\(version) (\(build))"
     }
 }
 

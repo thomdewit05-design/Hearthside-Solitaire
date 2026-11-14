@@ -87,7 +87,8 @@ struct VillageView: View {
                 if let goal = village.nextGoal() {
                     HStack {
                         Image(systemName: "target")
-                        Text("village.nextgoal \(String(localized: String.LocalizationValue(goal.measure.kind.nameKey))) \(goal.measure.cost)")
+                        let measureName = String(localized: String.LocalizationValue(goal.measure.kind.nameKey))
+                        Text("village.nextgoal \(measureName) \(goal.measure.cost)")
                     }
                     .font(AppFont.nunito(.subheadline, weight: .semibold))
                     .foregroundStyle(Color.pine)

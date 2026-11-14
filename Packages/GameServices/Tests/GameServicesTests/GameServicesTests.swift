@@ -141,7 +141,7 @@ final class ConfigServiceTests: XCTestCase {
 final class SaveServiceTests: XCTestCase {
     struct Progress: Codable, Equatable, Sendable { var coins: Int; var revision: Int }
 
-    func testLocalAndCloudMerge() async {
+    func testLocalAndCloudMerge() async throws {
         let local = MemorySaveStore()
         let cloud = MemorySaveStore()
         let merge: (Progress, Progress) -> Progress = { $0.revision >= $1.revision ? $0 : $1 }
@@ -151,7 +151,7 @@ final class SaveServiceTests: XCTestCase {
         XCTAssertEqual(service.load(), Progress(coins: 5, revision: 1))
 
         // Another device wrote a newer save to iCloud.
-        cloud.write(try! JSONEncoder().encode(Progress(coins: 50, revision: 4)), for: "p")
+        cloud.write(try JSONEncoder().encode(Progress(coins: 50, revision: 4)), for: "p")
         XCTAssertEqual(service.load(), Progress(coins: 50, revision: 4))
         let adopted = service.mergeCloudChange(into: Progress(coins: 5, revision: 1))
         XCTAssertEqual(adopted.coins, 50)
