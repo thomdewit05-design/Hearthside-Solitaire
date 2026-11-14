@@ -29,7 +29,7 @@ public final class GoogleAdNetwork: NSObject, AdNetwork, FullScreenContentDelega
         _ = await MobileAds.shared.start()
     }
 
-    public func preload(_ format: AdFormat) async {
+    public func preload(_ format: GameServices.AdFormat) async {
         switch format {
         case .interstitial where interstitial == nil:
             interstitial = try? await InterstitialAd.load(with: units.interstitial, request: Request())
@@ -44,7 +44,7 @@ public final class GoogleAdNetwork: NSObject, AdNetwork, FullScreenContentDelega
         }
     }
 
-    private func attachRevenue(_ ad: AnyObject?, format: AdFormat) {
+    private func attachRevenue(_ ad: AnyObject?, format: GameServices.AdFormat) {
         let handler: (AdValue) -> Void = { [weak self] value in
             guard let network = self else { return }
             let micros = value.value.multiplying(byPowerOf10: 6).int64Value
@@ -58,7 +58,7 @@ public final class GoogleAdNetwork: NSObject, AdNetwork, FullScreenContentDelega
         (ad as? RewardedAd)?.paidEventHandler = handler
     }
 
-    public func isReady(_ format: AdFormat) -> Bool {
+    public func isReady(_ format: GameServices.AdFormat) -> Bool {
         switch format {
         case .interstitial: return interstitial != nil
         case .rewarded: return rewarded != nil
