@@ -132,10 +132,14 @@ final class AppModel {
     /// Order matters: Remote Config → consent (UMP + ATT) → ads → purchases → Game Center.
     func start() async {
         #if canImport(FirebaseRemoteConfig)
-        let remote = FirebaseConfigSource()
-        await remote.fetchAndActivate()
-        config.update(source: remote)
-        ads.policy = AdPolicy(rules: AppModel.adRules(config))
+        // Only when GoogleService-Info.plist was found and FirebaseApp.configure() ran;
+        // otherwise Remote Config throws FIRAppNotConfigured. Local defaults apply then.
+        if FirebaseSupport.isConfigured {
+            let remote = FirebaseConfigSource()
+            await remote.fetchAndActivate()
+            config.update(source: remote)
+            ads.policy = AdPolicy(rules: AppModel.adRules(config))
+        }
         #endif
         purchases.onEntitlementsChanged = { [weak self] entitlements in
             self?.apply(entitlements)

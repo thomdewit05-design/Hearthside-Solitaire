@@ -1,6 +1,20 @@
 import Foundation
 import SwiftUI
 import GameServices
+#if canImport(FirebaseCore)
+@preconcurrency import FirebaseCore
+#endif
+
+/// Firebase is optional: without GoogleService-Info.plist the app runs on local defaults.
+enum FirebaseSupport {
+    static var isConfigured: Bool {
+        #if canImport(FirebaseCore)
+        return FirebaseApp.app() != nil
+        #else
+        return false
+        #endif
+    }
+}
 
 // Adapters for third-party SDKs. They live in the app target (not in the GameServices
 // package) because the SDKs are linked by the app via SPM. Each block compiles only
@@ -136,9 +150,11 @@ public final class FirebaseConfigSource: ConfigValueSource, @unchecked Sendable 
 public struct FirebaseAnalyticsSink: AnalyticsSink {
     public init() {}
     public func log(_ event: String, _ parameters: [String: String]) {
+        guard FirebaseSupport.isConfigured else { return }
         Analytics.logEvent(event, parameters: parameters.isEmpty ? nil : parameters)
     }
     public func setUserProperty(_ value: String?, for name: String) {
+        guard FirebaseSupport.isConfigured else { return }
         Analytics.setUserProperty(value, forName: name)
     }
 }
