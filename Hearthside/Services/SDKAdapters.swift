@@ -8,7 +8,7 @@ import GameServices
 // Written against Google Mobile Ads SDK 12, UMP 3 and Firebase 11.
 
 #if canImport(GoogleMobileAds) && canImport(UIKit)
-import GoogleMobileAds
+@preconcurrency import GoogleMobileAds
 import UIKit
 
 /// Google Mobile Ads (SDK 12+) adapter.
@@ -107,7 +107,7 @@ public final class GoogleAdNetwork: NSObject, AdNetwork, FullScreenContentDelega
 #endif
 
 #if canImport(FirebaseRemoteConfig)
-import FirebaseRemoteConfig
+@preconcurrency import FirebaseRemoteConfig
 
 /// Firebase-backed source. Call `fetchAndActivate()` at launch; values apply from then on.
 public final class FirebaseConfigSource: ConfigValueSource, @unchecked Sendable {
@@ -131,7 +131,7 @@ public final class FirebaseConfigSource: ConfigValueSource, @unchecked Sendable 
 #endif
 
 #if canImport(FirebaseAnalytics)
-import FirebaseAnalytics
+@preconcurrency import FirebaseAnalytics
 
 public struct FirebaseAnalyticsSink: AnalyticsSink {
     public init() {}
@@ -145,7 +145,7 @@ public struct FirebaseAnalyticsSink: AnalyticsSink {
 #endif
 
 #if canImport(UserMessagingPlatform) && canImport(UIKit)
-import UserMessagingPlatform
+@preconcurrency import UserMessagingPlatform
 import UIKit
 #if canImport(AppTrackingTransparency)
 import AppTrackingTransparency

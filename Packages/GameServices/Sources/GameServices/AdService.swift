@@ -28,6 +28,13 @@ public struct AdRevenue: Sendable, Equatable {
     public var valueMicros: Int64
     public var currency: String
     public var placement: String
+
+    public init(format: AdFormat, valueMicros: Int64, currency: String, placement: String) {
+        self.format = format
+        self.valueMicros = valueMicros
+        self.currency = currency
+        self.placement = placement
+    }
 }
 
 /// The ad network adapter (Google Mobile Ads in production, a fake in tests/simulator).

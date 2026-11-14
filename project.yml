@@ -12,7 +12,7 @@ settings:
     SWIFT_VERSION: "6.0"
     MARKETING_VERSION: "1.0.0"
     CURRENT_PROJECT_VERSION: "1"
-    DEVELOPMENT_TEAM: "" # ← vul je eigen Team ID in
+    DEVELOPMENT_TEAM: 7BDZ6994AD
     ENABLE_USER_SCRIPT_SANDBOXING: NO
     SWIFT_EMIT_LOC_STRINGS: YES
     LOCALIZATION_PREFERS_STRING_CATALOGS: YES
@@ -136,7 +136,7 @@ targets:
       - sdk: StoreKit.framework
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.hearthside.app # plan: com.<jouwstudio>.hearthside
+        PRODUCT_BUNDLE_IDENTIFIER: com.thomdewit.hearthside
         TARGETED_DEVICE_FAMILY: "1,2"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
