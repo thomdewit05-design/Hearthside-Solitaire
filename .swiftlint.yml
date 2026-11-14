@@ -1,0 +1,42 @@
+included:
+  - Hearthside
+  - HearthsideTests
+  - Packages/HearthsideCore/Sources
+  - Packages/HearthsideCore/Tests
+  - Packages/GameServices/Sources
+  - Packages/GameServices/Tests
+  - Tools/DealGen/Sources
+excluded:
+  - "**/.build"
+  - DerivedData
+
+disabled_rules:
+  - todo
+  - identifier_name        # short names like x, y, h, col are clearer in geometry and card code
+  - nesting
+  - large_tuple
+
+opt_in_rules:
+  - empty_count
+  - first_where
+  - contains_over_first_not_nil
+  - closure_spacing
+  - redundant_nil_coalescing
+  - sorted_first_last
+
+line_length:
+  warning: 140
+  error: 180
+  ignores_comments: true
+type_body_length:
+  warning: 400
+  error: 600
+file_length:
+  warning: 600
+  error: 900
+function_body_length:
+  warning: 80
+  error: 120
+cyclomatic_complexity:
+  warning: 20
+  error: 30

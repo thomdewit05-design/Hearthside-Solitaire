@@ -1,0 +1,199 @@
+{
+  "appPolicies": {
+    "eula": "",
+    "policies": [
+      {
+        "locale": "en_US",
+        "policyText": "",
+        "policyURL": ""
+      }
+    ]
+  },
+  "identifier": "B6C3A1D2",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "5.99",
+      "familyShareable": false,
+      "internalID": "6700000001",
+      "localizations": [
+        {
+          "description": "No ads between games.",
+          "displayName": "Remove Ads",
+          "locale": "en_US"
+        },
+        {
+          "description": "Geen advertenties tussen spellen.",
+          "displayName": "Advertenties weg",
+          "locale": "nl"
+        }
+      ],
+      "productID": "com.hearthside.removeads",
+      "referenceName": "Remove Ads",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "1.99",
+      "familyShareable": false,
+      "internalID": "6700000002",
+      "localizations": [
+        {
+          "description": "250 warmth",
+          "displayName": "Basket of firewood",
+          "locale": "en_US"
+        },
+        {
+          "description": "250 warmte",
+          "displayName": "Mandje haardhout",
+          "locale": "nl"
+        }
+      ],
+      "productID": "com.hearthside.warmth.small",
+      "referenceName": "Warmth Small",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "4.99",
+      "familyShareable": false,
+      "internalID": "6700000003",
+      "localizations": [
+        {
+          "description": "700 warmth",
+          "displayName": "Stack of firewood",
+          "locale": "en_US"
+        },
+        {
+          "description": "700 warmte",
+          "displayName": "Stapel haardhout",
+          "locale": "nl"
+        }
+      ],
+      "productID": "com.hearthside.warmth.medium",
+      "referenceName": "Warmth Medium",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "9.99",
+      "familyShareable": false,
+      "internalID": "6700000004",
+      "localizations": [
+        {
+          "description": "1,600 warmth",
+          "displayName": "Woodshed",
+          "locale": "en_US"
+        },
+        {
+          "description": "1.600 warmte",
+          "displayName": "Houtschuur",
+          "locale": "nl"
+        }
+      ],
+      "productID": "com.hearthside.warmth.large",
+      "referenceName": "Warmth Large",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "6700000005",
+      "localizations": [
+        {
+          "description": "500 warmth for your next home",
+          "displayName": "Starter pack",
+          "locale": "en_US"
+        },
+        {
+          "description": "500 warmte voor je volgende huisje",
+          "displayName": "Starterspakket",
+          "locale": "nl"
+        }
+      ],
+      "productID": "com.hearthside.starterpack",
+      "referenceName": "Starter Pack",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_applicationInternalID": "6700000000",
+    "_developerTeamID": "",
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "NLD",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [
+    {
+      "id": "21500001",
+      "localizations": [],
+      "name": "Hearthside Club",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "19.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6700000006",
+          "introductoryOffer": {
+            "internalID": "6700000506",
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "localizations": [
+            {
+              "description": "No ads, double warmth, unlimited hints.",
+              "displayName": "Hearthside Club",
+              "locale": "en_US"
+            },
+            {
+              "description": "Geen advertenties, dubbele warmte, onbeperkt hints.",
+              "displayName": "Hearthside Club",
+              "locale": "nl"
+            }
+          ],
+          "productID": "com.hearthside.club.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Club Yearly",
+          "subscriptionGroupID": "21500001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "2.99",
+          "familyShareable": false,
+          "groupNumber": 2,
+          "internalID": "6700000007",
+          "introductoryOffer": {
+            "internalID": "6700000507",
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "localizations": [
+            {
+              "description": "No ads, double warmth, unlimited hints.",
+              "displayName": "Hearthside Club",
+              "locale": "en_US"
+            },
+            {
+              "description": "Geen advertenties, dubbele warmte, onbeperkt hints.",
+              "displayName": "Hearthside Club",
+              "locale": "nl"
+            }
+          ],
+          "productID": "com.hearthside.club.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Club Monthly",
+          "subscriptionGroupID": "21500001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 4,
+    "minor": 0
+  }
+}
